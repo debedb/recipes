@@ -31,10 +31,6 @@ Keto / low-carb stand-in for polenta. Serves 5-6 as a side.
 7. Too thin: back on low heat, stir until it mounds on a spoon. Too thick:
    splash of broth.
 
-## Serving
-
-Under short ribs, braised mushrooms, or sausage and peppers. Anything with
-pan juices.
 
 ## Sources
 
