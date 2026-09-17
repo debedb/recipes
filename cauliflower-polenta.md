@@ -1,3 +1,8 @@
+---
+tags: [keto, side]
+status: synthesized
+---
+
 # Cauliflower Polenta
 
 Keto / low-carb stand-in for polenta. Serves 5-6 as a side.
