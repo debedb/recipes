@@ -23,7 +23,7 @@ Quantities below are what went in the pot, by scale, not what a source claimed.
 - 12 fl oz (1 1/2 cups) water
 - 5.3 oz (150 g) heavy whipping cream
 - 3.8 oz (108 g) jalapeno sheep cheese, grated
-- 2.4 oz (68 g) suluguni, grated or torn small
+- 2.4 oz (68 g) suluguni, grated
 - Black pepper
 - Salt, only at the end
 
