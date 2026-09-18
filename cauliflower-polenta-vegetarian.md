@@ -23,6 +23,7 @@ Quantities below are what went in the pot, by scale, not what a source claimed.
 - 12 fl oz (1 1/2 cups) water
 - 5.3 oz (150 g) heavy whipping cream
 - 3.8 oz (108 g) jalapeno sheep cheese, grated
+- 2.4 oz (68 g) suluguni, grated or torn small
 - Black pepper
 - Salt, only at the end
 
@@ -38,9 +39,12 @@ Quantities below are what went in the pot, by scale, not what a source claimed.
    original's 3-5 min, same reason. Do not skip: wet cauliflower makes soup,
    not polenta.
 5. Blend smooth with an immersion blender, in the pot.
-6. Off heat, stir in the cream and the cheese.
-7. Now taste, then salt. The butter is salted and the soup carries about 665 mg
-   sodium into the pot on its own; salting earlier oversalts it.
+6. Off heat, stir in the cream, then both cheeses. The suluguni goes
+   stringy rather than smooth; keep stirring and it disappears into the
+   puree. Add it off heat, not over flame, or it ropes.
+7. Now taste, then salt. Three things salt this dish before you do: the
+   butter is salted, the soup carries about 665 mg sodium into the pot, and
+   suluguni is a brined cheese. Salting earlier oversalts it.
 8. Too thin: back on low heat, stir until it mounds on a spoon. Too thick:
    splash of water.
 
@@ -50,21 +54,24 @@ Quantities below are what went in the pot, by scale, not what a source claimed.
   (1 1/2 cups). This is the swap that makes the dish vegetarian. Two knock-on
   effects: the batch is sweeter, and total liquid goes from about 12 fl oz to
   about 22 fl oz, which is why both the simmer and the boil-off run long.
-- Parmesan becomes jalapeno sheep cheese. Not only a flavor choice: authentic
-  Parmigiano-Reggiano is made with calf rennet, so it is not vegetarian. Any
-  hard cheese with a comparable salt-and-fat punch works, but see the note
-  below.
+- Parmesan becomes two cheeses: jalapeno sheep (3.8 oz) and suluguni
+  (2.4 oz), 6.2 oz in all against the original's ~3 oz of parmesan. Not only
+  a flavor choice: authentic Parmigiano-Reggiano is made with calf rennet, so
+  it is not vegetarian. The sheep cheese brings the heat and the salt; the
+  suluguni brings pull and melt, which is the one thing parmesan was doing
+  that a crumbly hard cheese alone would not replace. See the note below.
 - Butter goes from 3 tbsp to 3.3 oz, roughly double, and it was salted butter.
   Hence salting last.
 - Cream goes from 1/2 cup to 5.3 oz, roughly 2/3 cup.
 
 ## Notes
 
-- Rennet is the thing to actually check. The Forever Cheese page for Wooly
-  Wooly Jalapeno lists pasteurized sheep milk from Castilla-La Mancha, Spain,
-  and does not state the coagulant either way. If the cheese has to be
-  vegetarian and not merely meat-free-adjacent, read the wheel's label or ask
-  the counter for microbial rennet.
+- Rennet is the thing to actually check, now on two cheeses. The Forever
+  Cheese page for Wooly Wooly Jalapeno lists pasteurized sheep milk from
+  Castilla-La Mancha, Spain, and does not state the coagulant either way.
+  Suluguni is traditionally a rennet-set brined cheese and the brand matters
+  as much. If the dish has to be vegetarian and not merely meat-free-
+  adjacent, read both labels or ask the counter for microbial rennet.
 - Carbohydrate is no longer negligible. Pacific Foods lists 19 g carbohydrate
   and 10 g sugar per 1 cup serving; at 10.4 oz by weight, taking the soup as
   roughly 1 g/mL, that is about 1 1/4 cups, so about 23 g carbohydrate and

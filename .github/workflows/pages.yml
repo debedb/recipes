@@ -22,7 +22,7 @@ jobs:
       - run: python3 build.py --selftest
       - run: python3 build.py _site
         env:
-          SITE_URL: https://debedb.github.io/recipes
+          SITE_URL: https://recipes.debedb.com
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

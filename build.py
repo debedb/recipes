@@ -22,7 +22,7 @@ import re
 import sys
 
 SKIP = {"README.md", "CLAUDE.md"}
-SITE_URL = os.environ.get("SITE_URL", "https://debedb.github.io/recipes")
+SITE_URL = os.environ.get("SITE_URL", "https://recipes.debedb.com")
 
 CSS = """
 :root { color-scheme: light dark; --fg: #1a1a1a; --bg: #fff; --mut: #666; }
