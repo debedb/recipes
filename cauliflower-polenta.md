@@ -36,6 +36,11 @@ Keto / low-carb stand-in for polenta. Serves 5-6 as a side.
 Under short ribs, braised mushrooms, or sausage and peppers. Anything with
 pan juices.
 
+## Adaptations
+
+- cauliflower-polenta-vegetarian.md - squash soup for the chicken broth,
+  jalapeno sheep cheese for the parmesan. Cooked.
+
 ## Sources
 
 Synthesized from:
