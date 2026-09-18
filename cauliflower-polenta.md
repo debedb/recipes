@@ -31,11 +31,10 @@ Keto / low-carb stand-in for polenta. Serves 5-6 as a side.
 7. Too thin: back on low heat, stir until it mounds on a spoon. Too thick:
    splash of broth.
 
-
 ## Adaptations
 
 - cauliflower-polenta-vegetarian.md - squash soup for the chicken broth,
-  jalapeno sheep cheese for the parmesan. Cooked.
+  jalapeno sheep cheese and suluguni for the parmesan. Cooked.
 
 ## Sources
 
