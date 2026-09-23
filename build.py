@@ -36,6 +36,7 @@ body { background: var(--bg); color: var(--fg); margin: 0 auto; padding: 2rem 16
 h1 { font-size: 1.7rem; margin: 0 0 .25rem; }
 h2 { font-size: 1.1rem; margin: 2rem 0 .5rem; text-transform: uppercase;
   letter-spacing: .06em; color: var(--mut); }
+h3 { font-size: .95rem; margin: 1.4rem 0 .3rem; font-variant-numeric: tabular-nums; }
 a { color: inherit; }
 ul, ol { padding-left: 1.3rem; }
 li { margin: .3rem 0; }
@@ -121,6 +122,11 @@ def render(lines):
     i = 0
     while i < len(lines):
         line = lines[i]
+        if line.startswith("### "):
+            flush()
+            out.append("<h3>%s</h3>" % md_inline(line[4:].strip()))
+            i += 1
+            continue
         if BULLET.match(line) or NUMBER.match(line):
             flush()
             pat = BULLET if BULLET.match(line) else NUMBER
@@ -195,9 +201,50 @@ def page(title, body_html, jsonld=None):
     )
 
 
+def check_adaptation_links(recipes):
+    """Every adapted_from must name a real parent, and that parent must link back.
+
+    A one-directional link goes stale in silence: the child knows its parent,
+    the parent's page never mentions the child, and nobody finds out until
+    someone reads the parent looking for variations.
+    """
+    by_slug = {r["slug"]: r for r in recipes}
+    problems = []
+    for r in recipes:
+        parent_file = r["meta"].get("adapted_from")
+        if not parent_file:
+            continue
+        parent = by_slug.get(parent_file[:-3] if parent_file.endswith(".md") else parent_file)
+        if parent is None:
+            problems.append("%s.md: adapted_from names %s, which is not a recipe here"
+                            % (r["slug"], parent_file))
+            continue
+        listed = []
+        for heading, lines in parent["sections"]:
+            if heading.lower() == "adaptations":
+                listed = _gather(lines, BULLET)
+        if not any(r["slug"] + ".md" in item for item in listed):
+            problems.append("%s.md: parent %s has no '## Adaptations' line naming it"
+                            % (r["slug"], parent_file))
+    return problems
+
+
+def render_adaptations(lines, by_slug):
+    """Adaptation back-links carry only a filename; the label comes from the
+    child's own title, so there is no prose here to drift out of date."""
+    items = []
+    for raw in _gather(lines, BULLET):
+        slug = raw.strip()
+        slug = slug[:-3] if slug.endswith(".md") else slug
+        child = by_slug.get(slug)
+        label = child["title"] if child else raw
+        items.append('<li><a href="%s.html">%s</a></li>' % (slug, html.escape(label)))
+    return "<ul>%s</ul>" % "".join(items)
+
+
 def build(srcdir, outdir):
     os.makedirs(outdir, exist_ok=True)
-    built, unquantified = [], []
+    recipes, unquantified = [], []
 
     for name in sorted(os.listdir(srcdir)):
         if not name.endswith(".md") or name in SKIP:
@@ -209,12 +256,21 @@ def build(srcdir, outdir):
         slug = name[:-3]
         title, intro, sections = parse_sections(body)
         data, ings, _ = json_ld(meta, title, intro, sections, slug)
-
         for ing in ings:
             if not any(c.isdigit() for c in ing):
                 unquantified.append("%s: %s" % (name, ing))
+        recipes.append({"slug": slug, "title": title, "meta": meta, "intro": intro,
+                        "sections": sections, "data": data})
 
-        bits = ["<h1>%s</h1>" % html.escape(title)]
+    problems = check_adaptation_links(recipes)
+    if problems:
+        raise ValueError("adaptation links are broken:\n  " + "\n  ".join(problems))
+
+    by_slug = {r["slug"]: r for r in recipes}
+    os.makedirs(outdir, exist_ok=True)
+    for r in recipes:
+        meta = r["meta"]
+        bits = ["<h1>%s</h1>" % html.escape(r["title"])]
         meta_bits = []
         if meta.get("status"):
             meta_bits.append("status: %s" % meta["status"])
@@ -230,31 +286,33 @@ def build(srcdir, outdir):
             meta_bits.append("tags: %s" % ", ".join(tags))
         if meta_bits:
             bits.append('<div class="meta">%s</div>' % " &middot; ".join(meta_bits))
-        bits.append(render(intro))
-        for heading, lines in sections:
+        bits.append(render(r["intro"]))
+        for heading, lines in r["sections"]:
             bits.append("<h2>%s</h2>" % html.escape(heading))
-            bits.append(render(lines))
-
-        with open(os.path.join(outdir, slug + ".html"), "w", encoding="utf-8") as fh:
-            fh.write(page(title, "\n".join(b for b in bits if b), data))
-        built.append((slug, title, meta))
+            if heading.lower() == "adaptations":
+                bits.append(render_adaptations(lines, by_slug))
+            else:
+                bits.append(render(lines))
+        with open(os.path.join(outdir, r["slug"] + ".html"), "w", encoding="utf-8") as fh:
+            fh.write(page(r["title"], "\n".join(b for b in bits if b), r["data"]))
 
     rows = []
-    for slug, title, meta in built:
+    for r in recipes:
         note = ""
-        if meta.get("adapted_from"):
-            note = " <small>(adapted from %s)</small>" % html.escape(meta["adapted_from"][:-3])
-        rows.append('<li><a href="%s.html">%s</a>%s</li>' % (slug, html.escape(title), note))
+        if r["meta"].get("adapted_from"):
+            note = " <small>(adapted from %s)</small>" % html.escape(r["meta"]["adapted_from"][:-3])
+        rows.append('<li><a href="%s.html">%s</a>%s</li>'
+                    % (r["slug"], html.escape(r["title"]), note))
     with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(page("recipes", "<h1>recipes</h1>\n<ul>%s</ul>" % "".join(rows)))
 
-    print("built %d recipes into %s" % (len(built), outdir))
+    print("built %d recipes into %s" % (len(recipes), outdir))
     if unquantified:
         print("\n%d ingredient lines carry no quantity; these import wrong:"
               % len(unquantified), file=sys.stderr)
         for u in unquantified:
             print("  " + u, file=sys.stderr)
-    return len(built)
+    return len(recipes)
 
 
 SAMPLE = """---
@@ -309,6 +367,21 @@ def selftest():
     out = render(["- https://example.com/x", "", "See parent.md for more."])
     assert '<a href="https://example.com/x">' in out, out
     assert '<a href="parent.html">parent.md</a>' in out, out
+    # dated cook entries render as headings, not as stray paragraph text
+    cooks = render(["### 2026-09-17", "", "Coconut oil for the butter."])
+    assert "<h3>2026-09-17</h3>" in cooks, cooks
+    # a child whose parent does not link back must fail the build, not slip through
+    parent = {"slug": "p", "title": "P", "meta": {}, "sections": [("Adaptations", [])]}
+    child = {"slug": "c", "title": "C", "meta": {"adapted_from": "p.md"}, "sections": []}
+    probs = check_adaptation_links([parent, child])
+    assert probs and "no '## Adaptations' line" in probs[0], probs
+    parent["sections"] = [("Adaptations", ["- c.md"])]
+    assert check_adaptation_links([parent, child]) == [], "linked pair should pass"
+    # a missing parent is its own failure
+    orphan = {"slug": "o", "title": "O", "meta": {"adapted_from": "gone.md"}, "sections": []}
+    assert "not a recipe here" in check_adaptation_links([orphan])[0]
+    # the label comes from the child's title, so there is no prose to drift
+    assert '<a href="c.html">C</a>' in render_adaptations(["- c.md"], {"c": child})
     print("selftest ok")
 
 

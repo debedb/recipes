@@ -86,6 +86,16 @@ Quantities below are what went in the pot, by scale, not what a source claimed.
 Same as the original: under braised mushrooms, roasted squash, or anything with
 pan juices. The jalapeno means it no longer needs a hot element next to it.
 
+## Cooks
+
+### 2026-09-17
+
+First cook, and the quantities above are this cook rather than a plan. The
+suluguni was not part of the intent; it went in on the day and earned its
+place. Both the covered simmer and the uncovered boil-off ran past the
+original's 15 min and 3-5 min, which is what a cup and a half more liquid and
+half again more cauliflower will do.
+
 ## Sources
 
 - cauliflower-polenta.md, the original
