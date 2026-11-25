@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 62 480 565" role="img" aria-labelledby="t" font-family="Helvetica, Arial, sans-serif">
+<title id="t">Cutaway of a covered pot: about 1 in of water, a plate on foil balls above it, foil strips under the plate to lift it by, the kabocha open on top with its cut-off top beside it, over a low flame</title>
+<rect y="62" width="480" height="565" rx="14" fill="#fbf8f1"/>
+
+<!-- handles, pot -->
+<path d="M90 172h-18v32h18M390 172h18v32h-18" fill="none" stroke="#37474f" stroke-width="7" stroke-linejoin="round"/>
+<path d="M90 138V338Q90 356 108 356H372Q390 356 390 338V138Z" fill="#e9f1f5" stroke="#37474f" stroke-width="8"/>
+
+<!-- lid -->
+<path d="M82 132Q240 62 398 132Z" fill="#c9d2d8" stroke="#37474f" stroke-width="3"/>
+<rect x="78" y="128" width="324" height="10" rx="5" fill="#37474f"/>
+<rect x="224" y="82" width="32" height="18" rx="6" fill="#37474f"/>
+
+<!-- steam -->
+<g fill="none" stroke="#8fa6b3" stroke-width="4" stroke-linecap="round">
+<path d="M118 284q-7-16 0-32t0-32t0-32"/>
+<path d="M365 280q7-16 0-32t0-32t0-32"/>
+<path d="M304 238q-8-14 0-28t0-28"/>
+<path d="M340 232q8-14 0-28t0-28"/>
+</g>
+
+<!-- foil balls, then water over their feet -->
+<g fill="#c3cad0" stroke="#7b868e" stroke-width="2" stroke-linejoin="round">
+<polygon points="160,306 173,310 180,318 183,332 177,346 164,352 149,349 139,339 138,323 148,310"/>
+<polygon points="240,306 253,310 260,318 263,332 257,346 244,352 229,349 219,339 218,323 228,310"/>
+<polygon points="320,306 333,310 340,318 343,332 337,346 324,352 309,349 299,339 298,323 308,310"/>
+</g>
+<g fill="none" stroke="#8f9aa2" stroke-width="1.2">
+<path d="M160 306L164 325M164 325L183 332M164 325L149 349M164 325L138 323M148 310L164 325M240 306L244 325M244 325L263 332M244 325L229 349M244 325L218 323M228 310L244 325M320 306L324 325M324 325L343 332M324 325L309 349M324 325L298 323M308 310L324 325"/>
+</g>
+<path d="M94 320Q106 314 118 320T142 320T166 320T190 320T214 320T238 320T262 320T286 320T310 320T334 320T358 320T386 320V338Q386 352 372 352H108Q94 352 94 338Z" fill="#6fb3e0" fill-opacity=".72"/>
+<g fill="#fff" fill-opacity=".8"><circle cx="120" cy="340" r="3"/><circle cx="200" cy="344" r="3"/><circle cx="280" cy="342" r="3"/><circle cx="364" cy="338" r="3"/></g>
+
+<!-- foil sling under the plate, up both sides -->
+<path d="M101 158V296Q101 307 114 307H366Q379 307 379 296V158" fill="none" stroke="#98a3ab" stroke-width="4" stroke-linecap="round"/>
+
+<!-- plate -->
+<path d="M122 292L134 302H348L360 292" fill="none" stroke="#5f6b73" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+<!-- kabocha, cut through -->
+<ellipse cx="208" cy="238" rx="78" ry="60" fill="#2f5d3a"/>
+<ellipse cx="208" cy="238" rx="72" ry="54" fill="#f2a13a"/>
+<path d="M173 194H243V218Q254 226 254 244Q254 274 208 274Q162 274 162 244Q162 226 173 218Z" fill="#fbe08a" stroke="#e3b94d" stroke-width="2"/>
+<rect x="172" y="166" width="72" height="28" fill="#e9f1f5"/>
+
+<!-- cut-off top -->
+<path d="M288 298Q320 250 352 298Z" fill="#2f5d3a"/>
+<path d="M291 298h58l-6-8h-46Z" fill="#f2a13a"/>
+<path d="M311 278q3-12-2-22h22q-5 10-2 22Z" fill="#8b7b4a"/>
+
+<!-- flame -->
+<rect x="150" y="396" width="180" height="8" rx="4" fill="#37474f"/>
+<g fill="#f08a24"><path d="M180 394Q176 384 185 374Q184 380 190 368Q202 380 199 384Q203 388 200 394Z"/><path d="M230 394Q226 384 235 374Q234 380 240 368Q252 380 249 384Q253 388 250 394Z"/><path d="M280 394Q276 384 285 374Q284 380 290 368Q302 380 299 384Q303 388 300 394Z"/></g>
+<g fill="#ffd24a"><path d="M185 394Q186 386 190 380Q196 386 195 394Z"/><path d="M235 394Q236 386 240 380Q246 386 245 394Z"/><path d="M285 394Q286 386 290 380Q296 386 295 394Z"/></g>
+
+<!-- leader lines -->
+<g stroke="#1f2a30" stroke-width="1.5">
+<path d="M422 88L352 112M57 226L142 234M424 252L344 284M424 300L360 296M57 314L140 327M424 344L376 338M57 384L184 384M57 152L100 166"/>
+</g>
+
+<!-- markers -->
+<g fill="#1f2a30">
+<circle cx="435" cy="86" r="13"/><circle cx="44" cy="226" r="13"/><circle cx="437" cy="250" r="13"/><circle cx="437" cy="300" r="13"/><circle cx="44" cy="314" r="13"/><circle cx="437" cy="346" r="13"/><circle cx="44" cy="384" r="13"/><circle cx="44" cy="150" r="13"/>
+
+<circle cx="34" cy="430" r="10"/><circle cx="34" cy="455" r="10"/><circle cx="34" cy="480" r="10"/><circle cx="34" cy="505" r="10"/><circle cx="34" cy="530" r="10"/><circle cx="34" cy="555" r="10"/><circle cx="34" cy="580" r="10"/><circle cx="34" cy="605" r="10"/>
+</g>
+<g fill="#fff" font-size="15" font-weight="bold" text-anchor="middle">
+<text x="435" y="91">1</text><text x="44" y="231">2</text><text x="437" y="255">3</text><text x="437" y="305">4</text><text x="44" y="319">5</text><text x="437" y="351">6</text><text x="44" y="389">7</text><text x="44" y="155">8</text>
+<g font-size="13"><text x="34" y="435">1</text><text x="34" y="460">2</text><text x="34" y="485">3</text><text x="34" y="510">4</text><text x="34" y="535">5</text><text x="34" y="560">6</text><text x="34" y="585">7</text><text x="34" y="610">8</text></g>
+</g>
+
+<!-- legend -->
+<g fill="#1f2a30" font-size="17.5">
+<text x="56" y="436">Pot lid, closed</text>
+<text x="56" y="461">Kabocha, open on top, custard inside</text>
+<text x="56" y="486">Its cut-off top, beside it</text>
+<text x="56" y="511">Heatproof plate or shallow bowl</text>
+<text x="56" y="536">Rack or foil balls, standing in the water</text>
+<text x="56" y="561">About 1 in of water, below the plate</text>
+<text x="56" y="586">Gentle simmer, not a hard boil</text>
+<text x="56" y="611">Foil strips under the plate, to lift it out</text>
+</g>
+</svg>
