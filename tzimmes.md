@@ -43,25 +43,34 @@ Serves 5-6 as a sweet.
 
 ## Notes
 
-- The carrots are the one quantity not recorded: a little under 2 lb, not
-  weighed. That line is still the starting figure, not a measured one.
-- Coconut oil stands in for the butter, which makes this parve in fact rather
-  than parve-if-you-swap. It is not a neutral oil and it reads in the finished
-  dish. The honey is what keeps it off the vegan list.
-- The sweetening is split, not reduced: 2 oz date syrup plus 1.3 oz honey is
-  3.3 oz against the 1/4 cup of honey this started with, about 3 oz at honey's
-  density. Slightly more, redistributed, and the date syrup lands darker and
-  less floral than honey on its own.
-- Dried fruit went up across the board, 550 g against about 385 g. That is
-  where the extra cup of water goes: half again as much fruit takes up more
-  than the old quantities did.
-- Lemon more than doubled, from the juice of half a lemon to 1.2 oz. Against
-  that much dried fruit it is what keeps the pot from cloying.
+- Coconut oil makes this parve in fact rather than parve-if-you-swap, which is
+  all the butter line used to promise. It is not a neutral oil and it reads in
+  the finished dish. The honey is what keeps it off the vegan list.
+- Half again as much dried fruit takes up more liquid than the old quantities
+  did, which is where the extra cup of water goes. The lemon is what keeps that
+  much fruit sugar from cloying.
 
 ## Serving
 
 Warm or room temperature, small bowls, with tea. Chopped walnuts on top if you
 want the crunch. Keeps a week refrigerated and is better on the second day.
+
+## Cooks
+
+### 2026-09-17
+
+First actual cook. Everything before this was a starting point on paper.
+Against those starting quantities:
+
+- Coconut oil, 3 oz, in place of 3 tbsp butter.
+- Date syrup, 2 oz, alongside the honey, which came to 1.3 oz. Sweetening
+  totals 3.3 oz against about 3 oz for the original 1/4 cup of honey at
+  honey's density - slightly up and redistributed, not cut.
+- Dried fruit up across the board, 550 g against about 385 g.
+- Water up a full cup, to 2 1/2.
+- Lemon more than doubled, from the juice of half a lemon to 1.2 oz.
+
+Carrots were not weighed. A little under 2 lb.
 
 ## Sources
 

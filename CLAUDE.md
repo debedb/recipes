@@ -17,7 +17,7 @@ point; it does not produce a recipe that works.
 
 - One markdown file per recipe.
 - Sections: title, yield, ingredients, numbered steps, optional serving note,
-  sources.
+  optional notes, optional cook log, sources. Cook log and sources go last.
 - No life story, no SEO preamble, no video, no stock photography. Greg's own
   photos of the finished dish are welcome once they exist.
 - Every ingredient gets an explicit quantity on its own line. Recipes should be
@@ -43,19 +43,64 @@ cronometer: https://cronometer.com/...
 - `adapted_from`: filename of the parent recipe. Only on adaptations.
 - `cronometer`: link to the recipe in Cronometer, once it exists. Optional.
 
+## Cooks
+
+A file is a dish, not a diary entry. The quantities at the top are the current
+best version of it; `## Cooks` underneath is what actually happened, dated.
+
+```markdown
+## Cooks
+
+### 2026-09-17
+
+First actual cook. Against the starting quantities:
+
+- Coconut oil, 3 oz, in place of 3 tbsp butter.
+- Water up a full cup, to 2 1/2.
+
+Carrots were not weighed. A little under 2 lb.
+```
+
+- Newest cook first. `### YYYY-MM-DD` per entry.
+- An entry says what moved against what was there before, and why it mattered -
+  a substitution that changed the timing, the seasoning or the kosher status
+  says so. A quantity that merely got more precise does not need a line.
+- **Anything eyeballed is named as not weighed.** `status: tested` means it was
+  cooked, not that every number in the file was measured. A quantity nobody
+  weighed stays at its starting figure and the cook entry says so. Inventing
+  precision to make the file look finished is the one thing that makes the
+  collection worthless.
+- The difference from `## Notes`: Notes says why the recipe is the way it is
+  and outlives any one cook. Cooks says what happened on a day.
+- A first cook of a `synthesized` recipe belongs here, not in a new file. There
+  is no tested parent to adapt from yet - the recipe is simply becoming real.
+
 ## Adaptations
 
-An adaptation is its own file, not a section in the parent. Vegetarian, keto,
-paleo, kosher, or just what was in the house that day.
+A variation you would deliberately cook again gets its own file. One you did
+once because of what was in the house is a cook entry, not a new recipe. Promote
+it when you repeat it on purpose.
 
 - Name it `<parent>-<what-changed>.md`.
 - `adapted_from:` points at the parent.
 - A `## Changes from the original` section lists each swap and what it cost.
   A swap that changes cooking time or seasoning says so; that is the part the
   parent recipe cannot tell you.
-- The parent gets one line under `## Adaptations` pointing back.
+- The parent lists the child under `## Adaptations` as **a bare filename and
+  nothing else**. The label on the published page comes from the child's own
+  title, so there is no prose here to drift out of date. It drifted within
+  hours the first time it was written by hand.
 - The ingredient list stays complete. An adaptation is a recipe you can cook
   without opening the parent, and a block you can paste into Cronometer whole.
+
+## Recording a cook
+
+Two paths, both used:
+
+1. From the kitchen, file the **Cooked it** issue
+   (`.github/ISSUE_TEMPLATE/cooked.yml`). Durable, and it survives being
+   interrupted - an unsubmitted free-form issue draft does not.
+2. Later, hand the issue number over and it becomes the file edit and the PR.
 
 ## Publishing
 
@@ -69,7 +114,12 @@ GitHub Pages on push to `main`. The JSON-LD is what recipe importers read.
   ingredient list does not error, it silently creates an empty recipe.
 - It warns on ingredient lines with no quantity. Salt-to-taste is fine; a real
   ingredient without a number is a line that imports wrong.
+- It refuses the build when an `adapted_from:` names a parent that does not
+  exist, or a parent that does not list the child under `## Adaptations`. A
+  one-directional link rots quietly: the child knows its parent, the parent's
+  page never mentions the child, and nobody notices.
 - Markdown dialect is only what is written here. Quantity goes first on the
-  line so an ingredient list pastes into an importer as-is.
+  line so an ingredient list pastes into an importer as-is. `### YYYY-MM-DD`
+  under `## Cooks` is the only third-level heading.
 
 Flat layout for now. Folders when the flat listing gets annoying.

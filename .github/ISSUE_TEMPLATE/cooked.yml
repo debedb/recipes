@@ -1,0 +1,67 @@
+name: Cooked it
+description: Record what actually went in the pot, while you still remember
+title: "Cooked: "
+body:
+  - type: input
+    id: dish
+    attributes:
+      label: Dish
+      description: The recipe file, or just the name if there is no file yet.
+      placeholder: tzimmes.md
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Date cooked
+      placeholder: "2026-09-21"
+    validations:
+      required: true
+
+  - type: textarea
+    id: quantities
+    attributes:
+      label: Quantities
+      description: >
+        One per line, quantity first, so the block pastes straight into a
+        recipe importer. Weights beat volumes.
+      placeholder: |
+        250 g prunes
+        200 g dried apricots
+        2 oz date syrup
+        1.3 oz honey
+    validations:
+      required: true
+
+  - type: textarea
+    id: not_measured
+    attributes:
+      label: Not measured
+      description: >
+        Anything eyeballed. Say so here rather than inventing a number - the
+        recipe will record that it was not weighed instead of pretending.
+      placeholder: carrots, a little under 2 lb
+    validations:
+      required: false
+
+  - type: textarea
+    id: moved
+    attributes:
+      label: What moved, and what it did
+      description: >
+        Substitutions, timing that ran long, anything that surprised you. A
+        swap that changes the seasoning, the texture or whether the dish is
+        still parve, vegetarian or keto is the part worth writing down.
+      placeholder: |
+        Coconut oil instead of butter - makes it parve for real.
+        Reduction ran way past 30 min with the extra water.
+    validations:
+      required: false
+
+  - type: textarea
+    id: next
+    attributes:
+      label: What to change next time
+    validations:
+      required: false
