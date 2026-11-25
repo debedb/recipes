@@ -19,6 +19,7 @@ import html
 import json
 import os
 import re
+import shutil
 import sys
 
 SKIP = {"README.md", "CLAUDE.md"}
@@ -39,6 +40,7 @@ h2 { font-size: 1.1rem; margin: 2rem 0 .5rem; text-transform: uppercase;
 a { color: inherit; }
 ul, ol { padding-left: 1.3rem; }
 li { margin: .3rem 0; }
+img { max-width: 100%; height: auto; }
 .meta { color: var(--mut); font-size: .85rem; margin-bottom: 1.5rem; }
 .meta code { font-size: .85rem; }
 footer { margin-top: 3rem; color: var(--mut); font-size: .85rem; }
@@ -96,6 +98,7 @@ def _gather(lines, pattern):
 
 BULLET = re.compile(r"^- (.*)")
 NUMBER = re.compile(r"^\d+\. (.*)")
+IMAGE = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
 LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 BARE = re.compile(r"(?<![\"'>=])(https?://[^\s<)]+)")
 MD_LINK_FILE = re.compile(r"(?<![\w/\">])([a-z0-9-]+)\.md\b")
@@ -103,6 +106,7 @@ MD_LINK_FILE = re.compile(r"(?<![\w/\">])([a-z0-9-]+)\.md\b")
 
 def md_inline(text):
     out = html.escape(text)
+    out = IMAGE.sub(lambda m: '<img src="%s" alt="%s">' % (m.group(2), m.group(1)), out)
     out = LINK.sub(lambda m: '<a href="%s">%s</a>' % (html.escape(m.group(2)), m.group(1)), out)
     out = BARE.sub(lambda m: '<a href="%s">%s</a>' % (m.group(1), m.group(1)), out)
     out = MD_LINK_FILE.sub(lambda m: '<a href="%s.html">%s.md</a>' % (m.group(1), m.group(1)), out)
@@ -208,6 +212,8 @@ def build(srcdir, outdir):
             continue
         slug = name[:-3]
         title, intro, sections = parse_sections(body)
+        for _, src in IMAGE.findall(body):
+            shutil.copy(os.path.join(srcdir, src), outdir)  # a missing file raises and stops the build
         data, ings, _ = json_ld(meta, title, intro, sections, slug)
 
         for ing in ings:

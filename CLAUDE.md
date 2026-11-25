@@ -19,7 +19,9 @@ point; it does not produce a recipe that works.
 - Sections: title, yield, ingredients, numbered steps, optional serving note,
   sources.
 - No life story, no SEO preamble, no video, no stock photography. Greg's own
-  photos of the finished dish are welcome once they exist.
+  photos of the finished dish are welcome once they exist. A drawing a step
+  needs goes after the steps, `![alt](file.svg)`; the build copies the file and
+  fails if it is missing.
 - Every ingredient gets an explicit quantity on its own line. Recipes should be
   importable into cronometer.com personal recipes later without a rewrite.
 - Terse. Steps say what to do and why only where the why prevents a failure.
