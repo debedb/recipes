@@ -34,6 +34,11 @@ kosher salt and 4 egg whites, kept off the list because nobody eats them.
    Brush off all the loose salt.
 7. Split, spiced oil in, lemon over. No more salt.
 
+![Two views of the salt crust. From above, before burying: six whole sweet
+potatoes in one layer on a pressed salt floor in a snug dish, not touching. Cut
+away, after burying: the potatoes under salt, smoothed flat on
+top](salt-crust-sweet-potatoes-burying.svg)
+
 ## Notes
 
 - Salt, whites and oven are from salt-crust beets, 1 3/4 lb of them for about
